@@ -34,7 +34,9 @@ pipeline{
             steps{
                 echo 'test'
                 echo " java version is ${java_version}"
-                obj.test()
+                script {
+                    obj.test()
+                }
             }
         }
         stage('deploy') {
