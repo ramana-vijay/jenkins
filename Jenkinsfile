@@ -20,7 +20,9 @@ pipeline{
             
             steps{
                 echo 'build'
+                script {
                 obj=load "script.groovy"
+                }
             }
         }
         stage('test') {
