@@ -1,3 +1,4 @@
+def obj
 pipeline{
     
     agent any
@@ -19,6 +20,7 @@ pipeline{
             
             steps{
                 echo 'build'
+                obj=load "script.groovy"
             }
         }
         stage('test') {
@@ -26,11 +28,13 @@ pipeline{
                 expression{
                     params.version == '3'
                     
+                    
                 }
             }
             steps{
                 echo 'test'
                 echo " java version is ${java_version}"
+                obj.test()
             }
         }
         stage('deploy') {
