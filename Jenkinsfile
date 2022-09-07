@@ -57,7 +57,7 @@ pipeline{
             echo 'sucess post check'
         }
         failure{
-            echo 'failure post check'
+            echo 'failure post check failed'
         }
     }
     
